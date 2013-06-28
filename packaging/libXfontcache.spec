@@ -7,6 +7,7 @@ Group:          Development/Libraries
 Url:            http://xorg.freedesktop.org/
 
 Source:         %name-%version.tar.bz2
+Source1001: 	libXfontcache.manifest
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(fontcacheproto)
@@ -33,6 +34,7 @@ in %name.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static
@@ -47,11 +49,13 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files 
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %_libdir/libXfontcache.so.1*
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %_libdir/libXfontcache.so
 %_libdir/pkgconfig/xfontcache.pc
