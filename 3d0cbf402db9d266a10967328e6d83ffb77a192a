@@ -1,0 +1,8 @@
+Change-Id: I3d0cbf402db9d266a10967328e6d83ffb77a192a
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:40:32 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4772
+Project: platform/upstream/libXfontcache
+Branch: refs/heads/tizen
