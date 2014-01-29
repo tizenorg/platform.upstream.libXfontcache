@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXfontcache
 Version:        1.0.5
 Release:        0
@@ -15,6 +17,10 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xextproto)
 BuildRequires:  pkgconfig(xorg-macros) >= 1.3
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 FontCache is an extension that is used by X TrueType to cache
@@ -48,7 +54,7 @@ make %{?_smp_mflags}
 
 %postun -p /sbin/ldconfig
 
-%files 
+%files
 %manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
